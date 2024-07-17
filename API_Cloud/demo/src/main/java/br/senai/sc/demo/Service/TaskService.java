@@ -16,7 +16,7 @@ public class TaskService {
 
     public TaskPostDTO criarTask(TaskPostDTO taskPostDTO) {
         Task task = new Task();
-        task.setNome(taskPostDTO.getNome());
+        task.setNome(taskPostDTO.nome());
 
         taskRepository.save(task);
         return taskPostDTO;

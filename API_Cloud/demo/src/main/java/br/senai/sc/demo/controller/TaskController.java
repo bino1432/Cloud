@@ -8,18 +8,19 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @AllArgsConstructor
-@RequestMapping("/task")
+@RequestMapping("/aws")
 public class TaskController {
 
-    private TaskService taskService;
+    private TaskService service;
 
-    @PostMapping
-    public void cadastrarTask(@RequestBody TaskPostDTO taskPostDTO){
-        taskService.criarTask(taskPostDTO);
+    @PostMapping("/task")
+    public String cadastrarTask(@RequestBody TaskPostDTO taskPostDTO){
+        service.criarTask(taskPostDTO);
+        return "Task " + taskPostDTO.nome() + " criada com sucesso";
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/task/{id}")
     public Task buscarTask(@PathVariable Integer id){
-        return taskService.buscarTaskPorId(id);
+        return service.buscarTaskPorId(id);
     }
 }
