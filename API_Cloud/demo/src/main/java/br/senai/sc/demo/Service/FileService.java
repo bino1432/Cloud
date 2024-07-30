@@ -22,8 +22,9 @@ import java.util.UUID;
 @Service
 public class FileService implements FileInterface {
 
+
     @Autowired
-    private FileRepository repository;
+    private FileRepository fileRepository;
 
     @Value("${aws.access.key}")
     private String awsKeyID;
@@ -44,6 +45,8 @@ public class FileService implements FileInterface {
 
             file1.setImgReference(refImage);
             file1.setTask(new Task(id));
+
+            fileRepository.save(file1);
 
             AWSCredentials awsCredentials = new BasicAWSCredentials(awsKeyID, awsKeySecret);
 
