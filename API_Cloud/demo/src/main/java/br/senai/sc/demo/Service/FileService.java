@@ -1,7 +1,6 @@
 package br.senai.sc.demo.Service;
 
 import br.senai.sc.demo.Service.Interface.FileInterface;
-import br.senai.sc.demo.controller.dto.FilePostDTO;
 import br.senai.sc.demo.model.File;
 import br.senai.sc.demo.model.Task;
 import br.senai.sc.demo.repository.FileRepository;
@@ -12,8 +11,7 @@ import com.amazonaws.regions.Regions;
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3ClientBuilder;
 import com.amazonaws.services.s3.model.AmazonS3Exception;
-import com.amazonaws.services.s3.model.Bucket;
-import lombok.AllArgsConstructor;
+import com.amazonaws.services.s3.model.ObjectMetadata;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -34,7 +32,7 @@ public class FileService implements FileInterface {
     private String awsKeySecret;
 
     @Value("${aws.bucket.name}")
-    private String BucketName;
+    private String bucketName;
 
     @Override
     public boolean create(Long id, MultipartFile file) {
@@ -52,10 +50,15 @@ public class FileService implements FileInterface {
             AmazonS3 client = AmazonS3ClientBuilder.standard().withCredentials(
                     new AWSStaticCredentialsProvider(awsCredentials)).withRegion(Regions.US_EAST_1).build();
 
-            boolean bucketExist = client.doesBucketExistV2(BucketName);
-            System.out.println(bucketExist + "Opega");
+            boolean bucketExist = client.doesBucketExistV2(bucketName);
+
+            ObjectMetadata objectMetadata = new ObjectMetadata();
+            objectMetadata.setContentType(file.getContentType());
+            objectMetadata.setContentLength(file.getSize());
+            client.putObject(bucketName, refImage, file.getInputStream(), objectMetadata);
 
             return true;
+
         } catch (AmazonS3Exception e){
             System.out.println(e.getMessage());
             return false;
