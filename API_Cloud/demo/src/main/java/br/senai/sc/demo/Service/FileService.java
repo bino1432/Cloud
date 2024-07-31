@@ -10,13 +10,13 @@ import com.amazonaws.auth.BasicAWSCredentials;
 import com.amazonaws.regions.Regions;
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3ClientBuilder;
-import com.amazonaws.services.s3.model.AmazonS3Exception;
-import com.amazonaws.services.s3.model.ObjectMetadata;
+import com.amazonaws.services.s3.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.util.Date;
 import java.util.UUID;
 
 @Service
@@ -69,5 +69,24 @@ public class FileService implements FileInterface {
             System.out.println(e.getMessage());
             return false;
         }
+    }
+
+    public String buscarImagem(Long id){
+
+        AWSCredentials awsCredentials = new BasicAWSCredentials(awsKeyID, awsKeySecret);
+
+        AmazonS3 client = AmazonS3ClientBuilder.standard().withCredentials(
+                new AWSStaticCredentialsProvider(awsCredentials)).withRegion(Regions.US_EAST_1).build();
+
+        File file = fileRepository.findById(id).get();
+
+        GeneratePresignedUrlRequest presigned =
+                new GeneratePresignedUrlRequest(bucketName, file.getFileReference());
+        presigned.setExpiration(new Date(System.currentTimeMillis() + 600000));
+
+        String url = client.generatePresignedUrl(presigned).toString();
+
+        return url;
+
     }
 }

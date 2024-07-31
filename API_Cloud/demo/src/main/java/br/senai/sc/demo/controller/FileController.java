@@ -23,4 +23,11 @@ public class FileController {
               service.create(id, file), HttpStatusCode.valueOf(200)
         );
     }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<String> buscarImagem(@PathVariable Long id){
+        return new ResponseEntity<>(
+                service.buscarImagem(id), HttpStatusCode.valueOf(200)
+        );
+    }
 }
