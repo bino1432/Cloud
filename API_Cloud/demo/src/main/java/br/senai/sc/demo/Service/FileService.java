@@ -53,8 +53,6 @@ public class FileService implements FileInterface {
             AmazonS3 client = AmazonS3ClientBuilder.standard().withCredentials(
                     new AWSStaticCredentialsProvider(awsCredentials)).withRegion(Regions.US_EAST_1).build();
 
-            boolean bucketExist = client.doesBucketExistV2(bucketName);
-
             ObjectMetadata objectMetadata = new ObjectMetadata();
             objectMetadata.setContentType(file.getContentType());
             objectMetadata.setContentLength(file.getSize());
