@@ -6,8 +6,11 @@ import br.senai.sc.demo.model.Task;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @AllArgsConstructor
+@CrossOrigin("*")
 @RequestMapping("/aws")
 public class TaskController {
 
@@ -22,5 +25,15 @@ public class TaskController {
     @GetMapping("/task/{id}")
     public Task buscarTask(@PathVariable Integer id){
         return service.buscarTaskPorId(id);
+    }
+
+    @GetMapping("/task")
+    public List<Task> buscarTodasTasks(){
+        return service.buscarTodasTasks();
+    }
+
+    @GetMapping("/{id}")
+    public List<String> buscarImagens(@PathVariable Integer id){
+        return service.buscarImagens(id);
     }
 }

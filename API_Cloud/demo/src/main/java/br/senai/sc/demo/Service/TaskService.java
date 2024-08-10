@@ -6,6 +6,7 @@ import br.senai.sc.demo.repository.TaskRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -13,6 +14,7 @@ import java.util.Optional;
 public class TaskService {
 
     private TaskRepository taskRepository;
+    private FileService fileService;
 
     public TaskPostDTO criarTask(TaskPostDTO taskPostDTO) {
         Task task = new Task();
@@ -27,5 +29,14 @@ public class TaskService {
 
         Task task = taskOptional.get();
         return task;
+    }
+
+    public List<Task> buscarTodasTasks(){
+        return taskRepository.findAll();
+    }
+
+    public List<String> buscarImagens(Integer id){
+        Task task = buscarTaskPorId(id);
+        return task.getFiles().stream().map(file -> fileService.buscarImagem(file.getId())).toList();
     }
 }
