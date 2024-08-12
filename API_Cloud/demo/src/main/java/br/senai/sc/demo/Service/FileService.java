@@ -16,9 +16,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.util.Date;
-import java.util.List;
-import java.util.UUID;
+import java.util.*;
 
 @Service
 public class FileService implements FileInterface {
@@ -52,7 +50,7 @@ public class FileService implements FileInterface {
             AWSCredentials awsCredentials = new BasicAWSCredentials(awsKeyID, awsKeySecret);
 
             AmazonS3 client = AmazonS3ClientBuilder.standard().withCredentials(
-                    new AWSStaticCredentialsProvider(awsCredentials)).withRegion(Regions.US_EAST_1).build();
+                    new AWSStaticCredentialsProvider(awsCredentials)).withRegion(Regions.US_EAST_2).build();
 
             ObjectMetadata objectMetadata = new ObjectMetadata();
             objectMetadata.setContentType(file.getContentType());
@@ -70,21 +68,23 @@ public class FileService implements FileInterface {
         }
     }
 
-    public String buscarImagem(Long id){
+    public List<String> buscarImagem(Long id){
 
+        List<String> url = new ArrayList<>();
         AWSCredentials awsCredentials = new BasicAWSCredentials(awsKeyID, awsKeySecret);
 
         AmazonS3 client = AmazonS3ClientBuilder.standard().withCredentials(
-                new AWSStaticCredentialsProvider(awsCredentials)).withRegion(Regions.US_EAST_1).build();
+                new AWSStaticCredentialsProvider(awsCredentials)).withRegion(Regions.US_EAST_2).build();
 
-        File file = fileRepository.findById(id).get();
+        List<File> files = fileRepository.findAllByTask_Id(id);
 
-        GeneratePresignedUrlRequest presigned =
-                new GeneratePresignedUrlRequest(bucketName, file.getFileReference());
-        presigned.setExpiration(new Date(System.currentTimeMillis() + 600000));
+        for(File file : files){
+            GeneratePresignedUrlRequest presigned =
+                    new GeneratePresignedUrlRequest(bucketName, file.getFileReference());
+            presigned.setExpiration(new Date(System.currentTimeMillis() + 600000));
 
-        String url = client.generatePresignedUrl(presigned).toString();
-
+            url.add(client.generatePresignedUrl(presigned).toString());
+        }
         return url;
 
     }

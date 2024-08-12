@@ -15,7 +15,7 @@ import java.util.List;
 @RestController
 @AllArgsConstructor
 @CrossOrigin("*")
-@RequestMapping("/aws")
+@RequestMapping("/aws/file")
 public class FileController {
 
     private FileService service;
@@ -28,9 +28,8 @@ public class FileController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<String> buscarImagem(@PathVariable Long id){
-        return new ResponseEntity<>(
-                service.buscarImagem(id), HttpStatusCode.valueOf(200)
-        );
+    public List<String> buscarImagem(@PathVariable Long id){
+        return service.buscarImagem(id);
+
     }
 }

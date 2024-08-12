@@ -9,6 +9,6 @@ import java.util.List;
 @Repository
 public interface FileRepository extends JpaRepository<File, Long> {
 
-    List<File> findByTask_Id(Long id);
+    List<File> findAllByTask_Id(Long id);
 
 }

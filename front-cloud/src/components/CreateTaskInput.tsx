@@ -11,7 +11,6 @@ export default function CreateTaskInput() {
             },
             body: JSON.stringify({ nome: name })
         });
-        // const data = await response.json();
     }
 
     return (

@@ -11,12 +11,12 @@ import java.util.List;
 @RestController
 @AllArgsConstructor
 @CrossOrigin("*")
-@RequestMapping("/aws")
+@RequestMapping("/aws/task")
 public class TaskController {
 
     private TaskService service;
 
-    @PostMapping("/task")
+    @PostMapping
     public String cadastrarTask(@RequestBody TaskPostDTO taskPostDTO){
         service.criarTask(taskPostDTO);
         return "Task " + taskPostDTO.nome() + " criada com sucesso";
@@ -27,13 +27,9 @@ public class TaskController {
         return service.buscarTaskPorId(id);
     }
 
-    @GetMapping("/task")
+    @GetMapping
     public List<Task> buscarTodasTasks(){
         return service.buscarTodasTasks();
     }
 
-    @GetMapping("/{id}")
-    public List<String> buscarImagens(@PathVariable Integer id){
-        return service.buscarImagens(id);
-    }
 }

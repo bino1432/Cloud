@@ -34,9 +34,4 @@ public class TaskService {
     public List<Task> buscarTodasTasks(){
         return taskRepository.findAll();
     }
-
-    public List<String> buscarImagens(Integer id){
-        Task task = buscarTaskPorId(id);
-        return task.getFiles().stream().map(file -> fileService.buscarImagem(file.getId())).toList();
-    }
 }

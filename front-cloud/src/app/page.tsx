@@ -4,7 +4,6 @@ import Header from '@/components/Header';
 import TaskInput from '@/components/CreateTaskInput';
 import TaskCard from '@/components/TaskCard';
 import { useEffect, useState } from 'react';
-import { todo } from 'node:test';
 import Task from '@/interface/Task';
 
 export default function Home() {
@@ -13,7 +12,7 @@ export default function Home() {
 
   useEffect(() => {
     createTaskList();
-  });
+  }, []);
 
   async function createTaskList(){
     const response = await fetch('http://localhost:8088/aws/task');
@@ -33,11 +32,6 @@ export default function Home() {
         {listaTask.map((todo) => (
           <TaskCard id={todo.id} nome={todo.nome} />
         ))}
-        
-        <TaskCard 
-        id={1}
-        nome='asdadad'
-        />
       </div>
 
     </main>
