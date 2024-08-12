@@ -50,7 +50,7 @@ public class FileService implements FileInterface {
             AWSCredentials awsCredentials = new BasicAWSCredentials(awsKeyID, awsKeySecret);
 
             AmazonS3 client = AmazonS3ClientBuilder.standard().withCredentials(
-                    new AWSStaticCredentialsProvider(awsCredentials)).withRegion(Regions.US_EAST_2).build();
+                    new AWSStaticCredentialsProvider(awsCredentials)).withRegion(Regions.US_EAST_1).build();
 
             ObjectMetadata objectMetadata = new ObjectMetadata();
             objectMetadata.setContentType(file.getContentType());
@@ -74,7 +74,7 @@ public class FileService implements FileInterface {
         AWSCredentials awsCredentials = new BasicAWSCredentials(awsKeyID, awsKeySecret);
 
         AmazonS3 client = AmazonS3ClientBuilder.standard().withCredentials(
-                new AWSStaticCredentialsProvider(awsCredentials)).withRegion(Regions.US_EAST_2).build();
+                new AWSStaticCredentialsProvider(awsCredentials)).withRegion(Regions.US_EAST_1).build();
 
         List<File> files = fileRepository.findAllByTask_Id(id);
 
