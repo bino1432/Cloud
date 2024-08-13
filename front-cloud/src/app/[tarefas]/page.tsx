@@ -35,7 +35,7 @@ export default function teste() {
     return (
         <div>
             <Header />
-            <h1>DEU BOM PAEZAO</h1>
+
             <form action={(form) => postImage(form)}
                 className="flex place-content-center gap-3 my-10">
                 <input
