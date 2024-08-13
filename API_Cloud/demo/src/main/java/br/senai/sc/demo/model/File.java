@@ -27,7 +27,4 @@ public class File {
     @CreationTimestamp
     private LocalDate data;
 
-    public String getFileReference() {
-        return imgReference;
-    }
 }

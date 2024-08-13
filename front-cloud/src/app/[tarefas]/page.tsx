@@ -1,10 +1,8 @@
 'use client'
 import Header from "@/components/Header";
 import { getAllFiles, postFile } from "../api/file/fileService";
-import { useParams, useRouter } from "next/navigation";
+import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
-import FileAWS from "@/interface/FileAWS";
-import Image from "next/image";
 
 export default function teste() {
 

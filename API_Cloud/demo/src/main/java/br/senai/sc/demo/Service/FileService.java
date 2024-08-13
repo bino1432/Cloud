@@ -80,7 +80,7 @@ public class FileService implements FileInterface {
 
         for(File file : files){
             GeneratePresignedUrlRequest presigned =
-                    new GeneratePresignedUrlRequest(bucketName, file.getFileReference());
+                    new GeneratePresignedUrlRequest(bucketName, file.getImgReference());
             presigned.setExpiration(new Date(System.currentTimeMillis() + 600000));
 
             url.add(client.generatePresignedUrl(presigned).toString());
