@@ -1,0 +1,14 @@
+C:\Users\bernardo_zapelini\Documents\GitHub\Cloud\API_Cloud\demo\src\main\java\br\senai\sc\demo\controller\dto\FileGetDTO.java
+C:\Users\bernardo_zapelini\Documents\GitHub\Cloud\API_Cloud\demo\src\main\java\br\senai\sc\demo\controller\dto\FilePostDTO.java
+C:\Users\bernardo_zapelini\Documents\GitHub\Cloud\API_Cloud\demo\src\main\java\br\senai\sc\demo\controller\dto\TaskGetDTO.java
+C:\Users\bernardo_zapelini\Documents\GitHub\Cloud\API_Cloud\demo\src\main\java\br\senai\sc\demo\controller\dto\TaskPostDTO.java
+C:\Users\bernardo_zapelini\Documents\GitHub\Cloud\API_Cloud\demo\src\main\java\br\senai\sc\demo\controller\FileController.java
+C:\Users\bernardo_zapelini\Documents\GitHub\Cloud\API_Cloud\demo\src\main\java\br\senai\sc\demo\controller\TaskController.java
+C:\Users\bernardo_zapelini\Documents\GitHub\Cloud\API_Cloud\demo\src\main\java\br\senai\sc\demo\DemoApplication.java
+C:\Users\bernardo_zapelini\Documents\GitHub\Cloud\API_Cloud\demo\src\main\java\br\senai\sc\demo\model\File.java
+C:\Users\bernardo_zapelini\Documents\GitHub\Cloud\API_Cloud\demo\src\main\java\br\senai\sc\demo\model\Task.java
+C:\Users\bernardo_zapelini\Documents\GitHub\Cloud\API_Cloud\demo\src\main\java\br\senai\sc\demo\repository\FileRepository.java
+C:\Users\bernardo_zapelini\Documents\GitHub\Cloud\API_Cloud\demo\src\main\java\br\senai\sc\demo\repository\TaskRepository.java
+C:\Users\bernardo_zapelini\Documents\GitHub\Cloud\API_Cloud\demo\src\main\java\br\senai\sc\demo\Service\FileService.java
+C:\Users\bernardo_zapelini\Documents\GitHub\Cloud\API_Cloud\demo\src\main\java\br\senai\sc\demo\Service\Interface\FileInterface.java
+C:\Users\bernardo_zapelini\Documents\GitHub\Cloud\API_Cloud\demo\src\main\java\br\senai\sc\demo\Service\TaskService.java

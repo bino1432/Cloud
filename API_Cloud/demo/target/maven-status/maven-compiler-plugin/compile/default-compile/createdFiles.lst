@@ -1,0 +1,14 @@
+br\senai\sc\demo\model\File.class
+br\senai\sc\demo\Service\FileService.class
+br\senai\sc\demo\controller\FileController.class
+br\senai\sc\demo\controller\dto\TaskGetDTO.class
+br\senai\sc\demo\controller\TaskController.class
+br\senai\sc\demo\model\Task.class
+br\senai\sc\demo\DemoApplication.class
+br\senai\sc\demo\Service\TaskService.class
+br\senai\sc\demo\controller\dto\TaskPostDTO.class
+br\senai\sc\demo\repository\FileRepository.class
+br\senai\sc\demo\controller\dto\FileGetDTO.class
+br\senai\sc\demo\repository\TaskRepository.class
+br\senai\sc\demo\Service\Interface\FileInterface.class
+br\senai\sc\demo\controller\dto\FilePostDTO.class
