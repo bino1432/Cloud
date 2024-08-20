@@ -5,6 +5,7 @@ import TaskInput from '@/components/CreateTaskInput';
 import TaskCard from '@/components/TaskCard';
 import { useEffect, useState } from 'react';
 import Task from '@/interface/Task';
+import createTasksList from './api/test';
 
 export default function Home() {
 
@@ -15,11 +16,10 @@ export default function Home() {
   }, []);
 
   async function createTaskList(){
-    const response = await fetch('http://localhost:8088/aws/task');
-    const data = await response.json();
-
-    setListaTask(data)
-    console.log(data)
+    createTasksList().then((data) => {
+      setListaTask(data as Task[]);
+      console.log(data)
+    });    
   }
 
   return (

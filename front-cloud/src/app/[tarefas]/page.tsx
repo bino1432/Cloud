@@ -15,7 +15,6 @@ export default function teste() {
             console.log(id.tarefas)
             await postFile(id.tarefas, form)
         }
-        
     }
 
     const getAllImages = async () => {

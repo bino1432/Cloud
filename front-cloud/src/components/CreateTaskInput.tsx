@@ -1,16 +1,9 @@
+import createTasks from "@/app/api/componentApi";
+
 export default function CreateTaskInput() {
 
     async function createTask(a: FormData){
-        
-        const formData = Object.fromEntries(a);
-        const name = formData.nome
-        const response = await fetch('http://localhost:8088/aws/task', {
-            method: 'POST',
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({ nome: name })
-        });
+        createTasks(a);
     }
 
     return (

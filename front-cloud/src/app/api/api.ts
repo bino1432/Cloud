@@ -1,5 +1,7 @@
+"use server"
+
 import axios, { AxiosInstance } from "axios"
 
 export const api: AxiosInstance = axios.create({
-    baseURL: 'http://localhost:8088'
+    baseURL: 'http://springboot-demo:8088'
 })
