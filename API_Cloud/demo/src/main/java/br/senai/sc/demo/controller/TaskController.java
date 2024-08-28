@@ -1,6 +1,6 @@
 package br.senai.sc.demo.controller;
 
-import br.senai.sc.demo.Service.TaskService;
+import br.senai.sc.demo.service.TaskService;
 import br.senai.sc.demo.controller.dto.TaskPostDTO;
 import br.senai.sc.demo.model.Task;
 import lombok.AllArgsConstructor;
