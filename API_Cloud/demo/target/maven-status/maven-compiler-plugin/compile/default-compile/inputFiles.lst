@@ -1,6 +1,6 @@
 C:\Users\bernardo_zapelini\Documents\GitHub\Cloud\API_Cloud\demo\src\main\java\br\senai\sc\demo\config\KafkaConsumerConfig.java
 C:\Users\bernardo_zapelini\Documents\GitHub\Cloud\API_Cloud\demo\src\main\java\br\senai\sc\demo\config\KafkaProducerConfig.java
-C:\Users\bernardo_zapelini\Documents\GitHub\Cloud\API_Cloud\demo\src\main\java\br\senai\sc\demo\config\KafkaTopicConfig.java
+C:\Users\bernardo_zapelini\Documents\GitHub\Cloud\API_Cloud\demo\src\main\java\br\senai\sc\demo\controller\ConsumerController.java
 C:\Users\bernardo_zapelini\Documents\GitHub\Cloud\API_Cloud\demo\src\main\java\br\senai\sc\demo\controller\dto\FileGetDTO.java
 C:\Users\bernardo_zapelini\Documents\GitHub\Cloud\API_Cloud\demo\src\main\java\br\senai\sc\demo\controller\dto\FilePostDTO.java
 C:\Users\bernardo_zapelini\Documents\GitHub\Cloud\API_Cloud\demo\src\main\java\br\senai\sc\demo\controller\dto\TaskGetDTO.java
@@ -14,5 +14,6 @@ C:\Users\bernardo_zapelini\Documents\GitHub\Cloud\API_Cloud\demo\src\main\java\b
 C:\Users\bernardo_zapelini\Documents\GitHub\Cloud\API_Cloud\demo\src\main\java\br\senai\sc\demo\repository\TaskRepository.java
 C:\Users\bernardo_zapelini\Documents\GitHub\Cloud\API_Cloud\demo\src\main\java\br\senai\sc\demo\service\FileService.java
 C:\Users\bernardo_zapelini\Documents\GitHub\Cloud\API_Cloud\demo\src\main\java\br\senai\sc\demo\service\Interface\FileInterface.java
+C:\Users\bernardo_zapelini\Documents\GitHub\Cloud\API_Cloud\demo\src\main\java\br\senai\sc\demo\service\kafka\ConsumerService.java
 C:\Users\bernardo_zapelini\Documents\GitHub\Cloud\API_Cloud\demo\src\main\java\br\senai\sc\demo\service\kafka\ProducerService.java
 C:\Users\bernardo_zapelini\Documents\GitHub\Cloud\API_Cloud\demo\src\main\java\br\senai\sc\demo\service\TaskService.java

@@ -1,6 +1,6 @@
+br\senai\sc\demo\service\kafka\ConsumerService.class
 br\senai\sc\demo\model\File.class
 br\senai\sc\demo\service\FileService.class
-br\senai\sc\demo\config\KafkaTopicConfig.class
 br\senai\sc\demo\config\KafkaProducerConfig.class
 br\senai\sc\demo\controller\FileController.class
 br\senai\sc\demo\controller\dto\TaskGetDTO.class
@@ -15,4 +15,5 @@ br\senai\sc\demo\controller\dto\FileGetDTO.class
 br\senai\sc\demo\repository\TaskRepository.class
 br\senai\sc\demo\service\TaskService.class
 br\senai\sc\demo\service\Interface\FileInterface.class
+br\senai\sc\demo\controller\ConsumerController.class
 br\senai\sc\demo\controller\dto\FilePostDTO.class

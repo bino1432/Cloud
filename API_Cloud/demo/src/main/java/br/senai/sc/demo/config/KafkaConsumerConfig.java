@@ -51,9 +51,4 @@ public class KafkaConsumerConfig {
         factory.setConsumerFactory(consumerFactory());
         return factory;
     }
-
-    @KafkaListener(topics = "my-topic", groupId = "my-group")
-    public void listenGroup(String message) {
-        System.out.println("Mensagem Recebida: " + message);
-    }
 }
