@@ -22,7 +22,7 @@ public class TaskController {
         return "Task " + taskPostDTO.nome() + " criada com sucesso";
     }
 
-    @GetMapping("/task/{id}")
+    @GetMapping("/{id}")
     public Task buscarTask(@PathVariable Integer id){
         return service.buscarTaskPorId(id);
     }
