@@ -1,6 +1,7 @@
 package br.senai.sc.demo.config;
 
 import org.apache.kafka.clients.consumer.ConsumerConfig;
+import org.apache.kafka.clients.consumer.KafkaConsumer;
 import org.apache.kafka.common.serialization.StringDeserializer;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -50,5 +51,10 @@ public class KafkaConsumerConfig {
                 new ConcurrentKafkaListenerContainerFactory<>();
         factory.setConsumerFactory(consumerFactory());
         return factory;
+    }
+
+    @Bean
+    public KafkaConsumer<String, String> kafkaConsumer() {
+        return new KafkaConsumer<>(consumerFactory().getConfigurationProperties());
     }
 }
